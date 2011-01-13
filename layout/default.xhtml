@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>#{@title}</title>
+
+    <meta name="description" content="eBeats Internet Time" />
+    <meta name="generator" content="Ramaze #{Ramaze::VERSION}" />
+    <meta name="keywords" content="Ramaze, Your own keywords" />
+    <meta name="author" content="Max Mustermann" />
+    <meta name="date" content="#{Time.now.iso8601}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/smoothness/jquery-ui-1.8.7.custom.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/1140/1140.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/1140/typeimg.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/1140/smallerscreen.css" media="only screen and (max-width: 1023px)" />
+    <link rel="stylesheet" href="/1140/mobile.css" media="handheld, only screen and (max-width: 767px)" />
+    <link rel="stylesheet" href="/1140/layout.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    #@content
+    <footer class="container">
+      <div class="row">
+        <div class="twelvecol copyright">
+          &copy; 2011 <a href="http://rubyists.com">The Rubyists LLC.</a>
+        </div>
+        <div class="twelvecol last powered">
+          <a href="http://validator.w3.org/check?uri=http%3A%2F%2Febeats.org%2F">HTML5</a>
+          <a href="http://jigsaw.w3.org/css-validator/validator?uri=ebeats.org&profile=css3&usermedium=all&warning=1">CSS 3</a>
+          <a href="http://ramaze.net">Ramaze</a>
+        </div>
+      </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.4.4.js"%3E%3C/script%3E'))</script>
+    <script src="/js/jquery-ui-1.8.7.custom.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20663145-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

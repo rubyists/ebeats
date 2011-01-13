@@ -1,0 +1,192 @@
+/* Layout for desktop version */
+
+body {
+  background: #bbefcb;
+}
+
+header {
+  line-height: 6em;
+}
+
+h1 {
+  font-size: xx-large;
+  padding-top: 1em;
+}
+
+#beats {
+  color: #104c63;
+  font-size: 5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-family: "Droid Sans Mono", monospace;
+  text-align: center;
+}
+
+.about, .more, .copyright {
+  text-align: center;
+}
+
+.about > div > h2 {
+  background: #5c8814;
+  color: #e6fac4;
+  border-radius: 1em 1em 0px 0px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: x-large;
+  margin-bottom: 0px;
+}
+
+.about > div {
+  border-radius: 5px;
+  margin-bottom: 2em;
+}
+
+.about > div p {
+  background: #d5fa97;
+  color: #250;
+  padding: 0.5em;
+  margin-bottom: 0px;
+}
+
+.about > div :last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+
+#clock-frame {
+  background: #104c63;
+  color: #90d0e8;
+  position: relative;
+  border-radius: 100%;
+  height: 16em;
+  width: 16em;
+  margin: 2em auto;
+}
+
+#clock-digit {
+  background: #476b78;
+  position: absolute;
+  border-radius: 100% 100% 1em 1em;
+  -o-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  top: 0%;
+  left: 50%;
+  margin-left: -0.5em;
+  width: 1em;
+  height: 8em;
+}
+
+#clock-counter {
+  -moz-transform: rotate(180deg);
+  text-align: center;
+  line-height: 8em;
+}
+
+#clock-signs {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none outside none;
+}
+
+#clock-signs li {
+  position: absolute;
+  top: 0%;
+  line-height: 1.5em;
+  left: 50%;
+  margin-left: -1em;
+  height: 50%;
+  text-align: right;
+  -o-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+#clock-signs :nth-child(1) {
+  -o-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+#clock-signs :nth-child(2) {
+  -o-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#clock-signs :nth-child(3) {
+  -o-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#clock-signs :nth-child(4) {
+  -o-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#clock-signs :nth-child(5) {
+  -o-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#clock-signs :nth-child(6) {
+  -o-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+#clock-signs :nth-child(7) {
+  -o-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+#clock-signs :nth-child(8) {
+  -o-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+#clock-signs :nth-child(9) {
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.time-input input {
+  width: 2em;
+}
+.date-input #input-year {
+  width: 3em;
+}
+.date-input input {
+  width: 2em;
+}
+
+#input-timespec {
+  width: 25em;
+}
+
+/* Layout for mobile version */
+
+@media handheld, screen and (max-width: 767px) {
+  h1, #beats {
+    font-size: xx-large;
+  }
+}
