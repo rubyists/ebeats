@@ -1,6 +1,12 @@
 <form class="container">
   <fieldset class="row">
     <legend>Beat Converter</legend>
+    <div id="timezone">
+      <select id="timezone-major">
+      </select>
+      <select id="timezone-minor">
+      </select>
+    </div>
     <div class="date-input">
       Date (YYYY-MM-DD):
       <input type="text"id="input-year" name="year" placeholder="YYYY" />
@@ -21,7 +27,10 @@
       <label for="input-second">s</label>
     </div>
 
-    <input type="text" id="input-timespec" name="timespec" disabled />
-    <input type="text" id="input-beats" name="beats" placeholder="@000" />
+    <label for="input-beats-date">d</label>
+    <input type="date" id="input-beats-date" class="datepicker" name="beats-date" placeholder="YYYY.MM.DD">
+
+    <label for="input-beats-time">@</label>
+    <input type="text" id="input-beats-time" name="beats-time" placeholder="bbb.bb">
   </fieldset>
 </form>

@@ -29,6 +29,9 @@ h1 {
 .about > div > h2 {
   background: #5c8814;
   color: #e6fac4;
+  -o-border-radius: 1em 1em 0px 0px;
+  -webkit-border-radius: 1em 1em 0px 0px;
+  -moz-border-radius: 1em 1em 0px 0px;
   border-radius: 1em 1em 0px 0px;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -37,6 +40,9 @@ h1 {
 }
 
 .about > div {
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
   margin-bottom: 2em;
 }
@@ -49,6 +55,9 @@ h1 {
 }
 
 .about > div :last-child {
+  -o-border-radius: 0px 0px 5px 5px;
+  -webkit-border-radius: 0px 0px 5px 5px;
+  -moz-border-radius: 0px 0px 5px 5px;
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -56,7 +65,10 @@ h1 {
   background: #104c63;
   color: #90d0e8;
   position: relative;
-  border-radius: 100%;
+  -o-border-radius: 16em;
+  -webkit-border-radius: 16em;
+  -moz-border-radius: 16em;
+  border-radius: 16em;
   height: 16em;
   width: 16em;
   margin: 2em auto;
@@ -65,6 +77,9 @@ h1 {
 #clock-digit {
   background: #476b78;
   position: absolute;
+  -o-border-radius: 100% 100% 1em 1em;
+  -webkit-border-radius: 100% 100% 1em 1em;
+  -moz-border-radius: 100% 100% 1em 1em;
   border-radius: 100% 100% 1em 1em;
   -o-transform-origin: 50% 100%;
   -moz-transform-origin: 50% 100%;

@@ -5,8 +5,10 @@
 
 require 'rubygems'
 require 'ramaze'
+require 'rack/coffee'
 require_relative "../beats/lib/beat"
 require "beat/time"
+p Beat::Time.now.to_beats.beats
 
 Ramaze.middleware! do |m|
   m.use Rack::CommonLogger, Ramaze::Log
@@ -15,7 +17,7 @@ Ramaze.middleware! do |m|
   m.use Rack::RouteExceptions
   m.use Rack::ContentLength
   m.use Rack::Coffee, root: 'public', urls: ['/coffee']
-  m.use Rack::ETag, 'public'
+  m.use Rack::ETag
   m.use Rack::Head
   m.use Rack::ConditionalGet
   m.use Ramaze::Reloader
