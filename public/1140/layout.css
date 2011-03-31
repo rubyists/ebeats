@@ -6,6 +6,12 @@ body {
 
 header {
   line-height: 6em;
+  text-align: center;
+}
+
+header img {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
