@@ -2,7 +2,8 @@ class MainController < Controller
   def index
     beat_time = Beat::Time.now.to_beats
     @title = "eBeats Internet Time : @%s" % beat_time.beats.to_i
-    @beat_date = beat_time.strftime("d%d.%m.%Y")
+    @beat_date = beat_time.beat_date_string
+    @beats = beat_time.beat_datetime_string
   end
 
   def just_beat(timespec = nil)
@@ -11,12 +12,12 @@ class MainController < Controller
 
   def beat(timespec = nil)
     time = now_or_later(timespec)
-    respond("%s@%0.3f.beats" % [time.strftime("d%d.%m.%Y"), time.beats])
+    respond("%s@%0.3f.beats" % [time.beat_date_string, time.beats])
   end
 
   def full_beat(timespec = nil)
     time = now_or_later(timespec)
-    respond("%s@%s.beats" % [time.strftime("d%d.%m.%Y"), time.beats])
+    respond("%s@%s.beats" % [time.beat_date_string, time.beats])
   end
 
   private

@@ -16,13 +16,13 @@ dateToBeats = (date) ->
   [year, month, day, beats]
 
 formatBeats = (parts) ->
-  "d#{formatBeatsDate(parts)} @#{formatBeatsTime(parts)}"
+  "#{formatBeatsDate(parts)} @#{formatBeatsTime(parts)}"
 
 formatBeatsDate = (parts) ->
   [year, month, day, beats] = parts
   month = "0#{month}" if month < 10
   day = "0#{day}" if day < 10
-  "#{day}.#{month}.#{year}"
+  "#{year}-#{month}m-#{day}d"
 
 formatBeatsTime = (parts) ->
   [year, month, day, beats] = parts
