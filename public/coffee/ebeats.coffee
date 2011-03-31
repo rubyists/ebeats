@@ -15,13 +15,6 @@ dateToBeats = (date) ->
           (seconds * beatsPerSecond)
   [year, month, day, beats]
 
-dateToCET = (date) ->
-  utc = Date.UTC(
-    date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
-    date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds(),
-  )
-  new Date(utc)
-
 formatBeats = (parts) ->
   "d#{formatBeatsDate(parts)} @#{formatBeatsTime(parts)}"
 
@@ -36,7 +29,9 @@ formatBeatsTime = (parts) ->
   beats.toString().slice(0, 6)
 
 updateBeats = (parts) ->
-  $("#beats").html(formatBeats(parts))
+  formatted = formatBeats(parts)
+  $("#beats").html(formatted)
+  document.title = formatted
 
 updateClock = (beats) ->
   digit_deg = (360.0 / 1000.0) * beats
@@ -61,7 +56,7 @@ updateClock = (beats) ->
 
 update = ->
   now = new Date(Date.now())
-  parts = dateToBeats(dateToCET(now))
+  parts = dateToBeats(now)
   updateClock(parts[3])
   updateBeats(parts)
 
@@ -94,7 +89,7 @@ calculator = ->
   time = new Date(Date.now())
 
   syncBeats = ->
-    parts = dateToBeats(dateToCET(time))
+    parts = dateToBeats(time)
     $("#input-beats-date").val(formatBeatsDate(parts))
     $("#input-beats-time").val(formatBeatsTime(parts))
 
