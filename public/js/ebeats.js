@@ -1,5 +1,5 @@
 (function() {
-  var beatsPerHour, beatsPerMinute, beatsPerSecond, calculator, dateToBeats, dateToCET, formatBeats, formatBeatsDate, formatBeatsTime, p, update, updateBeats, updateClock;
+  var beatsPerHour, beatsPerMinute, beatsPerSecond, calculator, dateToBeats, formatBeats, formatBeatsDate, formatBeatsTime, p, update, updateBeats, updateClock;
   p = function(obj) {
     var _ref;
     return (_ref = window.console) != null ? typeof _ref.debug === "function" ? _ref.debug(obj) : void 0 : void 0;
@@ -13,13 +13,8 @@
     beats = (hours * beatsPerHour) + (minutes * beatsPerMinute) + (seconds * beatsPerSecond);
     return [year, month, day, beats];
   };
-  dateToCET = function(date) {
-    var utc;
-    utc = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
-    return new Date(utc);
-  };
   formatBeats = function(parts) {
-    return "d" + (formatBeatsDate(parts)) + " @" + (formatBeatsTime(parts));
+    return "" + (formatBeatsDate(parts)) + " @" + (formatBeatsTime(parts));
   };
   formatBeatsDate = function(parts) {
     var beats, day, month, year;
@@ -30,7 +25,7 @@
     if (day < 10) {
       day = "0" + day;
     }
-    return "" + day + "." + month + "." + year;
+    return "" + year + "-" + month + "m-" + day + "d";
   };
   formatBeatsTime = function(parts) {
     var beats, day, month, year;
@@ -38,7 +33,10 @@
     return beats.toString().slice(0, 6);
   };
   updateBeats = function(parts) {
-    return $("#beats").html(formatBeats(parts));
+    var formatted;
+    formatted = formatBeats(parts);
+    $("#beats").html(formatted);
+    return document.title = formatted;
   };
   updateClock = function(beats) {
     var counter_deg, counter_transform, digit_deg, digit_transform;
@@ -66,7 +64,7 @@
   update = function() {
     var now, parts;
     now = new Date(Date.now());
-    parts = dateToBeats(dateToCET(now));
+    parts = dateToBeats(now);
     updateClock(parts[3]);
     return updateBeats(parts);
   };
@@ -110,7 +108,7 @@
     time = new Date(Date.now());
     syncBeats = function() {
       var parts;
-      parts = dateToBeats(dateToCET(time));
+      parts = dateToBeats(time);
       $("#input-beats-date").val(formatBeatsDate(parts));
       return $("#input-beats-time").val(formatBeatsTime(parts));
     };
