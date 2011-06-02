@@ -1,2 +1,3 @@
 rack-coffee -v 0.3.4
 ramaze -v 2011.01.30
+thin -v 1.2.11
